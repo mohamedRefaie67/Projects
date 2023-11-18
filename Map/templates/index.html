@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}">
+</head>
+<body>
+    <div class="banner">
+
+    <div class="navbar">
+        <img src="{{url_for( 'static', filename='images/icon.png')}}" class="logo">
+                <p>Discover The World</p>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Statistics</a></li>
+            
+            <li><a href="#">Company Overview</a></li>
+            <li><a href="#">Team Work</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Log in</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        
+        <div class="Form-Div">
+            <form method="POST" enctype="multipart/form-data">
+                <p style="color: red;">{{error}}</p><br>
+
+
+                <label for="Lat">Lat</label>
+                <input type="text" name="latitude" id="Lat"placeholder="latitude" class="inp-box">
+                <label for="Lat">N</label>  <br><br><br>
+
+                <label for="Lon">Lon</label>
+                <input type="text" name="longitude" id="Lon" placeholder="longitude " class="inp-box">
+                <label for="Lon">E</label><br>
+                <button class="btn" type="submit">Search</button><br><br>
+
+            </form>
+        </div>
+
+        <div class="Map-Div">
+            {{ map|safe }}
+        </div>
+    </div>
+    <footer>
+    <p> All rights reserved &copy; 2023 , Designed by <span>Mohamed Ahmed</span></p>  
+    </footer>
+</div>
+</body>
+</html>
